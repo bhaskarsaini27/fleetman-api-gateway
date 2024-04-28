@@ -31,7 +31,7 @@ pipeline {
 
       stage('Deploy to Cluster') {
           steps {
-                    sh '/usr/local/bin/kubectl apply -f ${WORKSPACE}/deploy.yaml --validate=false'
+                    sh '/usr/local/bin/kubectl apply -f ${WORKSPACE}/deploy.yaml'
           }
       }
    }
