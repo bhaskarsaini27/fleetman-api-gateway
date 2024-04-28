@@ -1,9 +1,6 @@
 pipeline {
    agent any
-   tools {
-        // Specify the version or label configured in Global Tool Configuration
-        kubernetesTool 'kubectl'
-    }
+
    environment {
      // You must set the following environment variables
      // ORGANIZATION_NAME
