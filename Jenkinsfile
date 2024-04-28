@@ -34,7 +34,7 @@ pipeline {
 
       stage('Deploy to Cluster') {
           steps {
-                    sh 'kubectl apply -f ${WORKSPACE}/deploy.yaml'
+                    sh 'kubectl version'
           }
       }
    }
