@@ -31,7 +31,7 @@ pipeline {
 
       stage('Deploy to Cluster') {
           steps {
-                    sh '/home/bhaskar/bin/kubectl version'
+                    sh '/usr/local/bin/kubectl version'
           }
       }
    }
