@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: ${REPOSITORY_TAG}
+        image: sainibha/bhaskarsaini27-fleetman-api-gateway:${BUILD_ID}
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
