@@ -1,5 +1,5 @@
 pipeline {
-   agent { label 'master' }
+   agent any
 
    environment {
      // You must set the following environment variables
