@@ -1,6 +1,6 @@
 FROM openjdk:8u131-jdk-alpine
 
-MAINTAINER Richard Chesterwood "contact@virtualpairprogrammers.com"
+MAINTAINER Bhaskar Saini "contact@virtualpairprogrammers.com"
 
 EXPOSE 8080
 
