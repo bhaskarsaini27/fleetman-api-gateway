@@ -35,7 +35,7 @@ pipeline {
           steps {
                     // sh '/usr/local/bin/kubectl apply -f ${WORKSPACE}/deploy.yaml'
                     //sh 'envsubst < ${WORKSPACE}/deploy.yaml | /usr/local/bin/kubectl apply -f -'
-                    sh '/usr/local/bin/kubectl cluster-info'
+                    sh '/usr/local/bin/kubectl get nodes -v=10'
           }
       }
    }
