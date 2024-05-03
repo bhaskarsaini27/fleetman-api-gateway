@@ -1,5 +1,3 @@
-@Library('my-shared-library') _
-
 pipeline {
    agent any
 
@@ -21,26 +19,22 @@ pipeline {
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
          }
       }
-      stage('Build') {
+      stage('Package Build') {
          steps {
             sh '''mvn clean package'''
          }
       }
 
-      stage('Build and Push Image') {
+      stage('Image Build') {
          steps {
            sh 'docker image build -t ${REPOSITORY_TAG} .'
          }
       }
-      stage('Docker Image Push : DockerHub '){
-         when { expression {  params.action == 'create' } }
-            steps{
-               script{
-                   
-                   dockerImagePush("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
-               }
-            }
-        } 
+      stage('Push Image to DockerHub') {
+         steps {
+           sh 'docker push ${REPOSITORY_TAG} .'
+         }
+      }
       stage('Deploy to Cluster') {
           steps {
             withCredentials([
