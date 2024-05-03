@@ -32,7 +32,7 @@ pipeline {
       }
       stage('Push Image to DockerHub') {
          steps {
-           sh 'docker push ${REPOSITORY_TAG} .'
+           sh 'docker push ${REPOSITORY_TAG}'
          }
       }
       stage('Deploy to Cluster') {
